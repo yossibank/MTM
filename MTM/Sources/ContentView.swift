@@ -1,12 +1,5 @@
-//
-//  ContentView.swift
-//  MTM
-//
-//  Created by Kamiyama Yoshihito on 2024/05/12.
-//
-
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext

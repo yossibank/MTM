@@ -33,6 +33,10 @@ generate-folder:
 generate-mock:
 	sh Script/mockolo.sh
 
+.PHONY: run-format
+run-format:
+	swift run --package-path BuildTools swiftformat .
+
 .PHONY: open
 open:
 	open ./$(PRODUCT_NAME).xcworkspace
