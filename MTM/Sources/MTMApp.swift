@@ -1,18 +1,11 @@
-//
-//  MTMApp.swift
-//  MTM
-//
-//  Created by Kamiyama Yoshihito on 2024/05/12.
-//
-
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct MTMApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Item.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
