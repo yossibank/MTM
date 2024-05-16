@@ -2,7 +2,6 @@ PRODUCT_NAME := MMM
 
 .PHONY: setup
 setup:
-	$(MAKE) setup-pre-commit
 	$(MAKE) install-pre-commit
 	$(MAKE) install-bundler
 	$(MAKE) install-mint-packages
