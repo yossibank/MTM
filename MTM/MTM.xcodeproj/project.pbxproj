@@ -12,27 +12,7 @@
 		78266A472BF0C6E700722B27 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78266A462BF0C6E700722B27 /* Item.swift */; };
 		78266A492BF0C6E800722B27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78266A482BF0C6E800722B27 /* Assets.xcassets */; };
 		78266A4C2BF0C6E800722B27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78266A4B2BF0C6E800722B27 /* Preview Assets.xcassets */; };
-		78266A562BF0C6E900722B27 /* MTMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78266A552BF0C6E900722B27 /* MTMTests.swift */; };
-		78266A602BF0C6E900722B27 /* MTMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78266A5F2BF0C6E900722B27 /* MTMUITests.swift */; };
-		78266A622BF0C6E900722B27 /* MTMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78266A612BF0C6E900722B27 /* MTMUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		78266A522BF0C6E900722B27 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78266A372BF0C6E700722B27 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 78266A3E2BF0C6E700722B27;
-			remoteInfo = MTM;
-		};
-		78266A5C2BF0C6E900722B27 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78266A372BF0C6E700722B27 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 78266A3E2BF0C6E700722B27;
-			remoteInfo = MTM;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		78266A3F2BF0C6E700722B27 /* MTM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,29 +21,10 @@
 		78266A462BF0C6E700722B27 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		78266A482BF0C6E800722B27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78266A4B2BF0C6E800722B27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		78266A512BF0C6E900722B27 /* MTMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		78266A552BF0C6E900722B27 /* MTMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTMTests.swift; sourceTree = "<group>"; };
-		78266A5B2BF0C6E900722B27 /* MTMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		78266A5F2BF0C6E900722B27 /* MTMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTMUITests.swift; sourceTree = "<group>"; };
-		78266A612BF0C6E900722B27 /* MTMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTMUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		78266A3C2BF0C6E700722B27 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78266A4E2BF0C6E900722B27 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78266A582BF0C6E900722B27 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,9 +37,7 @@
 		78266A362BF0C6E700722B27 = {
 			isa = PBXGroup;
 			children = (
-				78266A412BF0C6E700722B27 /* MTM */,
-				78266A542BF0C6E900722B27 /* MTMTests */,
-				78266A5E2BF0C6E900722B27 /* MTMUITests */,
+				78266A412BF0C6E700722B27 /* Sources */,
 				78266A402BF0C6E700722B27 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,13 +46,11 @@
 			isa = PBXGroup;
 			children = (
 				78266A3F2BF0C6E700722B27 /* MTM.app */,
-				78266A512BF0C6E900722B27 /* MTMTests.xctest */,
-				78266A5B2BF0C6E900722B27 /* MTMUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		78266A412BF0C6E700722B27 /* MTM */ = {
+		78266A412BF0C6E700722B27 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				78266A422BF0C6E700722B27 /* MTMApp.swift */,
@@ -102,7 +59,7 @@
 				78266A482BF0C6E800722B27 /* Assets.xcassets */,
 				78266A4A2BF0C6E800722B27 /* Preview Content */,
 			);
-			path = MTM;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		78266A4A2BF0C6E800722B27 /* Preview Content */ = {
@@ -111,23 +68,6 @@
 				78266A4B2BF0C6E800722B27 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		78266A542BF0C6E900722B27 /* MTMTests */ = {
-			isa = PBXGroup;
-			children = (
-				78266A552BF0C6E900722B27 /* MTMTests.swift */,
-			);
-			path = MTMTests;
-			sourceTree = "<group>";
-		};
-		78266A5E2BF0C6E900722B27 /* MTMUITests */ = {
-			isa = PBXGroup;
-			children = (
-				78266A5F2BF0C6E900722B27 /* MTMUITests.swift */,
-				78266A612BF0C6E900722B27 /* MTMUITestsLaunchTests.swift */,
-			);
-			path = MTMUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,42 +90,6 @@
 			productReference = 78266A3F2BF0C6E700722B27 /* MTM.app */;
 			productType = "com.apple.product-type.application";
 		};
-		78266A502BF0C6E900722B27 /* MTMTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 78266A682BF0C6E900722B27 /* Build configuration list for PBXNativeTarget "MTMTests" */;
-			buildPhases = (
-				78266A4D2BF0C6E900722B27 /* Sources */,
-				78266A4E2BF0C6E900722B27 /* Frameworks */,
-				78266A4F2BF0C6E900722B27 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				78266A532BF0C6E900722B27 /* PBXTargetDependency */,
-			);
-			name = MTMTests;
-			productName = MTMTests;
-			productReference = 78266A512BF0C6E900722B27 /* MTMTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		78266A5A2BF0C6E900722B27 /* MTMUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 78266A6B2BF0C6E900722B27 /* Build configuration list for PBXNativeTarget "MTMUITests" */;
-			buildPhases = (
-				78266A572BF0C6E900722B27 /* Sources */,
-				78266A582BF0C6E900722B27 /* Frameworks */,
-				78266A592BF0C6E900722B27 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				78266A5D2BF0C6E900722B27 /* PBXTargetDependency */,
-			);
-			name = MTMUITests;
-			productName = MTMUITests;
-			productReference = 78266A5B2BF0C6E900722B27 /* MTMUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -198,14 +102,6 @@
 				TargetAttributes = {
 					78266A3E2BF0C6E700722B27 = {
 						CreatedOnToolsVersion = 15.3;
-					};
-					78266A502BF0C6E900722B27 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 78266A3E2BF0C6E700722B27;
-					};
-					78266A5A2BF0C6E900722B27 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 78266A3E2BF0C6E700722B27;
 					};
 				};
 			};
@@ -223,8 +119,6 @@
 			projectRoot = "";
 			targets = (
 				78266A3E2BF0C6E700722B27 /* MTM */,
-				78266A502BF0C6E900722B27 /* MTMTests */,
-				78266A5A2BF0C6E900722B27 /* MTMUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,20 +130,6 @@
 			files = (
 				78266A4C2BF0C6E800722B27 /* Preview Assets.xcassets in Resources */,
 				78266A492BF0C6E800722B27 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78266A4F2BF0C6E900722B27 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78266A592BF0C6E900722B27 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,37 +146,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		78266A4D2BF0C6E900722B27 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				78266A562BF0C6E900722B27 /* MTMTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78266A572BF0C6E900722B27 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				78266A602BF0C6E900722B27 /* MTMUITests.swift in Sources */,
-				78266A622BF0C6E900722B27 /* MTMUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		78266A532BF0C6E900722B27 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 78266A3E2BF0C6E700722B27 /* MTM */;
-			targetProxy = 78266A522BF0C6E900722B27 /* PBXContainerItemProxy */;
-		};
-		78266A5D2BF0C6E900722B27 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 78266A3E2BF0C6E700722B27 /* MTM */;
-			targetProxy = 78266A5C2BF0C6E900722B27 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		78266A632BF0C6E900722B27 /* Debug */ = {
@@ -425,7 +275,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MTM/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Sources/Preview Content\"";
 				DEVELOPMENT_TEAM = 6WHPY5MQSB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -454,7 +304,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MTM/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Sources/Preview Content\"";
 				DEVELOPMENT_TEAM = 6WHPY5MQSB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -476,82 +326,6 @@
 			};
 			name = Release;
 		};
-		78266A692BF0C6E900722B27 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6WHPY5MQSB;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "yossibank-yahoo.co.jp.MTMTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MTM.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MTM";
-			};
-			name = Debug;
-		};
-		78266A6A2BF0C6E900722B27 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6WHPY5MQSB;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "yossibank-yahoo.co.jp.MTMTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MTM.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MTM";
-			};
-			name = Release;
-		};
-		78266A6C2BF0C6E900722B27 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6WHPY5MQSB;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "yossibank-yahoo.co.jp.MTMUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MTM;
-			};
-			name = Debug;
-		};
-		78266A6D2BF0C6E900722B27 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6WHPY5MQSB;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "yossibank-yahoo.co.jp.MTMUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MTM;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -569,24 +343,6 @@
 			buildConfigurations = (
 				78266A662BF0C6E900722B27 /* Debug */,
 				78266A672BF0C6E900722B27 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		78266A682BF0C6E900722B27 /* Build configuration list for PBXNativeTarget "MTMTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				78266A692BF0C6E900722B27 /* Debug */,
-				78266A6A2BF0C6E900722B27 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		78266A6B2BF0C6E900722B27 /* Build configuration list for PBXNativeTarget "MTMUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				78266A6C2BF0C6E900722B27 /* Debug */,
-				78266A6D2BF0C6E900722B27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
