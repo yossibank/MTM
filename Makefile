@@ -4,6 +4,8 @@ PRODUCT_NAME := MMM
 setup:
 	$(MAKE) setup-pre-commit
 	$(MAKE) install-pre-commit
+	$(MAKE) install-bundler
+	$(MAKE) install-mint-packages
 
 .PHONY: setup-pre-commit
 setup-pre-commit:
@@ -12,3 +14,16 @@ setup-pre-commit:
 .PHONY: install-pre-commit
 install-pre-commit:
 	pre-commit install
+
+.PHONY: install-bundler
+install-bundler:
+	bundle install
+
+.PHONY: install-mint-packages
+install-mint-packages:
+	mint bootstrap --overwrite y
+
+.PHONY: clean
+clean:
+	find . -type d \( -name \*.xcodeproj \) | xargs rm -rf
+	rm -rf $${HOME}/Library/Developer/Xcode/DerivedData
