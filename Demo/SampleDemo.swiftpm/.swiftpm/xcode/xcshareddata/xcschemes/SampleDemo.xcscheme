@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "78266A3E2BF0C6E700722B27"
-               BuildableName = "MTM.app"
-               BlueprintName = "MTM"
-               ReferencedContainer = "container:MTM.xcodeproj">
+               BlueprintIdentifier = "SampleDemo"
+               BuildableName = "SampleDemo"
+               BlueprintName = "SampleDemo"
+               ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -27,13 +27,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:Sources/TestPlan/MTM.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -49,19 +44,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "78266A3E2BF0C6E700722B27"
-            BuildableName = "MTM.app"
-            BlueprintName = "MTM"
-            ReferencedContainer = "container:MTM.xcodeproj">
+            BlueprintIdentifier = "SampleDemo"
+            BuildableName = "SampleDemo"
+            BlueprintName = "SampleDemo"
+            ReferencedContainer = "container:">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "IDEPreferLogStreaming"
-            value = "YES"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -73,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "78266A3E2BF0C6E700722B27"
-            BuildableName = "MTM.app"
-            BlueprintName = "MTM"
-            ReferencedContainer = "container:MTM.xcodeproj">
+            BlueprintIdentifier = "SampleDemo"
+            BuildableName = "SampleDemo"
+            BlueprintName = "SampleDemo"
+            ReferencedContainer = "container:">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
