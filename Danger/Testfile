@@ -6,7 +6,7 @@ system("mint run xcparse codecov Test/MTM.xcresult ./")
 
 xcov.report(
     workspace: "MTM.xcworkspace",
-    scheme: "Debug",
+    scheme: "MTM",
     xccov_file_direct_path: "action.xccovreport",
     only_project_targets: false
 )
