@@ -2,12 +2,16 @@ PRODUCT_NAME := MTM
 
 .PHONY: setup
 setup:
-	$(MAKE) install-pre-commit
 	$(MAKE) install-bundler
 	$(MAKE) install-mint-packages
 	$(MAKE) generate-folder
 	$(MAKE) generate-mock
 	$(MAKE) open
+
+.PHONY: pre-commit
+pre-commit:
+	$(MAKE) setup-pre-commit
+	$(MAKE) install-pre-commit
 
 .PHONY: setup-pre-commit
 setup-pre-commit:
