@@ -98,8 +98,5 @@ iOSInjectionProject/
 # ENV
 .env
 
-# Local
+# Test
 SourcePackages
-
-# ipa
-ipa
