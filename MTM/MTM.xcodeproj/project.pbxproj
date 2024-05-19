@@ -12,9 +12,14 @@
 		78266A472BF0C6E700722B27 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78266A462BF0C6E700722B27 /* Item.swift */; };
 		78266A492BF0C6E800722B27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78266A482BF0C6E800722B27 /* Assets.xcassets */; };
 		78266A4C2BF0C6E800722B27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78266A4B2BF0C6E800722B27 /* Preview Assets.xcassets */; };
+		785A47272BF8C5FC00959790 /* AppIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 785A47262BF8C5FC00959790 /* AppIcon */; };
+		785A47292BF8C5FF00959790 /* Sample in Frameworks */ = {isa = PBXBuildFile; productRef = 785A47282BF8C5FF00959790 /* Sample */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		780654442BFA36BE00172365 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		780654452BFA36CB00172365 /* AdHoc.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AdHoc.xcconfig; sourceTree = "<group>"; };
+		780654462BFA36D200172365 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		78266A3F2BF0C6E700722B27 /* MTM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78266A422BF0C6E700722B27 /* MTMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTMApp.swift; sourceTree = "<group>"; };
 		78266A442BF0C6E700722B27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				785A47292BF8C5FF00959790 /* Sample in Frameworks */,
+				785A47272BF8C5FC00959790 /* AppIcon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,7 @@
 			children = (
 				78266A412BF0C6E700722B27 /* Sources */,
 				78266A402BF0C6E700722B27 /* Products */,
+				785A47252BF8C5FC00959790 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +65,7 @@
 				78266A422BF0C6E700722B27 /* MTMApp.swift */,
 				78266A442BF0C6E700722B27 /* ContentView.swift */,
 				78266A462BF0C6E700722B27 /* Item.swift */,
+				785A472A2BF8C8EE00959790 /* Configuration */,
 				78266A4A2BF0C6E800722B27 /* Resource */,
 				782C429C2BF647E30099D08E /* Resource Preview */,
 				782C429B2BF647D10099D08E /* TestPlan */,
@@ -88,6 +97,23 @@
 			path = "Resource Preview";
 			sourceTree = "<group>";
 		};
+		785A47252BF8C5FC00959790 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		785A472A2BF8C8EE00959790 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				780654442BFA36BE00172365 /* Debug.xcconfig */,
+				780654452BFA36CB00172365 /* AdHoc.xcconfig */,
+				780654462BFA36D200172365 /* Release.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,6 +130,10 @@
 			dependencies = (
 			);
 			name = MTM;
+			packageProductDependencies = (
+				785A47262BF8C5FC00959790 /* AppIcon */,
+				785A47282BF8C5FF00959790 /* Sample */,
+			);
 			productName = MTM;
 			productReference = 78266A3F2BF0C6E700722B27 /* MTM.app */;
 			productType = "com.apple.product-type.application";
@@ -288,15 +318,18 @@
 		};
 		78266A662BF0C6E900722B27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 780654442BFA36BE00172365 /* Debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				APP_PRODUCT_BUNDLE_IDENTIFIER = "$(APP_PRODUCT_BUNDLE_IDENTIFIER)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_NAME)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sources/Resource Preview\"";
-				DEVELOPMENT_TEAM = 6WHPY5MQSB;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "アプリアイコンの保存";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -307,8 +340,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "yossibank-yahoo.co.jp.MTM";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -321,15 +355,18 @@
 		};
 		78266A672BF0C6E900722B27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 780654462BFA36D200172365 /* Release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				APP_PRODUCT_BUNDLE_IDENTIFIER = "$(APP_PRODUCT_BUNDLE_IDENTIFIER)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_NAME)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sources/Resource Preview\"";
-				DEVELOPMENT_TEAM = 6WHPY5MQSB;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "アプリアイコンの保存";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -340,8 +377,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "yossibank-yahoo.co.jp.MTM";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -410,15 +448,18 @@
 		};
 		785A47242BF8BE2E00959790 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 780654452BFA36CB00172365 /* AdHoc.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				APP_PRODUCT_BUNDLE_IDENTIFIER = "$(APP_PRODUCT_BUNDLE_IDENTIFIER)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_NAME)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sources/Resource Preview\"";
-				DEVELOPMENT_TEAM = 6WHPY5MQSB;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "アプリアイコンの保存";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -429,8 +470,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "yossibank-yahoo.co.jp.MTM";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -465,6 +507,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		785A47262BF8C5FC00959790 /* AppIcon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppIcon;
+		};
+		785A47282BF8C5FF00959790 /* Sample */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Sample;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 78266A372BF0C6E700722B27 /* Project object */;
 }
