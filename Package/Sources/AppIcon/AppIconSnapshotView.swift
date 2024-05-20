@@ -1,6 +1,8 @@
 import Photos
 import SwiftUI
 
+// 画像保存先
+// ~/Library/Developer/CoreSimulator/Devices/[DEVICE_ID]/data/Media/DCIM/100APPLE/
 public struct AppIconSnapshotView: View {
     @State private var isShowAlert = false
     @State private var message = ""

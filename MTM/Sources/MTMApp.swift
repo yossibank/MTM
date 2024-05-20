@@ -1,3 +1,4 @@
+import AppIcon
 import SwiftData
 import SwiftUI
 
@@ -18,7 +19,7 @@ struct MTMApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppIconSnapshotView(iconName: "t.square.fill", iconColor: .black)
         }
         .modelContainer(sharedModelContainer)
     }
