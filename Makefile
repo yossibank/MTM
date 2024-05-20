@@ -41,6 +41,10 @@ generate-mock:
 run-format:
 	swift run --package-path BuildTools swiftformat .
 
+.PHONY: update-package
+update-package:
+	sh Script/update-package.sh
+
 .PHONY: open
 open:
 	open ./$(PRODUCT_NAME).xcworkspace
