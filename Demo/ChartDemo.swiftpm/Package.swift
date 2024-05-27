@@ -15,7 +15,7 @@ let package = Package(
     products: [
         .iOSApplication(
             name: "ChartDemo",
-            targets: ["AppModule"],
+            targets: ["ChartDemo"],
             bundleIdentifier: "yossibank-yahoo.co.jp.ChartDemo",
             teamIdentifier: "6WHPY5MQSB",
             displayVersion: "1.0",
@@ -34,10 +34,27 @@ let package = Package(
             ]
         )
     ],
+    dependencies: [
+        .package(
+            url: "https://github.com/SnapKit/SnapKit.git",
+            from: "5.7.1"
+        ),
+        .package(
+            url: "https://github.com/danielgindi/Charts.git",
+            from: "5.1.0"
+        )
+    ],
     targets: [
         .executableTarget(
-            name: "AppModule",
-            path: "."
+            name: "ChartDemo",
+            dependencies: [
+                .product(name: "SnapKit", package: "SnapKit"),
+                .product(name: "DGCharts", package: "Charts")
+            ],
+            path: "Sources",
+            resources: [
+                .process("Resources")
+            ]
         )
     ]
 )
