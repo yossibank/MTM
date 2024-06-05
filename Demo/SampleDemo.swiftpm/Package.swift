@@ -35,13 +35,18 @@ let package = Package(
         )
     ],
     dependencies: [
+        .package(
+            url: "https://github.com/SnapKit/SnapKit.git",
+            from: "5.7.1"
+        ),
         .package(path: "../../Package")
     ],
     targets: [
         .executableTarget(
             name: "SampleDemo",
             dependencies: [
-                .product(name: "Sample", package: "Package", condition: nil)
+                .product(name: "SnapKit", package: "SnapKit"),
+                .product(name: "Sample", package: "Package")
             ],
             path: "Sources",
             resources: [
