@@ -1,5 +1,7 @@
 import UIKit
 
+typealias VoidBlock = () -> Void
+
 typealias CellRegistration<
     Cell: UICollectionViewCell,
     ViewData

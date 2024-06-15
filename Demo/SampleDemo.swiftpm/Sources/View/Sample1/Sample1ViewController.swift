@@ -1,7 +1,7 @@
 import SnapKit
 import UIKit
 
-final class SampleViewController: UIViewController {
+final class Sample1ViewController: UIViewController {
     private lazy var collectionView: UICollectionView = .init(
         frame: .zero,
         collectionViewLayout: collectionViewLayout
@@ -55,11 +55,13 @@ final class SampleViewController: UIViewController {
 
 // MARK: - private methods
 
-private extension SampleViewController {
+private extension Sample1ViewController {
     func setupCollectionView() {
         view.addSubview(collectionView) {
             $0.edges.equalToSuperview()
         }
+
+        title = "sample1"
     }
 
     func configureDataSource() {
