@@ -1,6 +1,8 @@
 import SnapKit
 import UIKit
 
+// MARK: - properties & init
+
 final class Sample1ViewController: UIViewController {
     private lazy var collectionView: UICollectionView = .init(
         frame: .zero,
@@ -43,10 +45,15 @@ final class Sample1ViewController: UIViewController {
     >?
 
     private let provider = Sample1ViewDataProvider()
+}
 
+// MARK: - override methods
+
+extension Sample1ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupView()
         setupCollectionView()
         configureDataSource()
         applySnapshot()
@@ -56,12 +63,14 @@ final class Sample1ViewController: UIViewController {
 // MARK: - private methods
 
 private extension Sample1ViewController {
+    func setupView() {
+        title = "sample1"
+    }
+
     func setupCollectionView() {
         view.addSubview(collectionView) {
             $0.edges.equalToSuperview()
         }
-
-        title = "sample1"
     }
 
     func configureDataSource() {

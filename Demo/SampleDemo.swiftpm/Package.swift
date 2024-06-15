@@ -10,7 +10,7 @@ import PackageDescription
 let package = Package(
     name: "SampleDemo",
     platforms: [
-        .iOS("17.0")
+        .iOS("15.0")
     ],
     products: [
         .iOSApplication(
@@ -23,14 +23,10 @@ let package = Package(
             appIcon: .placeholder(icon: .cloud),
             accentColor: .presetColor(.mint),
             supportedDeviceFamilies: [
-                .pad,
                 .phone
             ],
             supportedInterfaceOrientations: [
-                .portrait,
-                .landscapeRight,
-                .landscapeLeft,
-                .portraitUpsideDown(.when(deviceFamilies: [.pad]))
+                .portrait
             ]
         )
     ],
@@ -38,15 +34,13 @@ let package = Package(
         .package(
             url: "https://github.com/SnapKit/SnapKit.git",
             from: "5.7.1"
-        ),
-        .package(path: "../../Package")
+        )
     ],
     targets: [
         .executableTarget(
             name: "SampleDemo",
             dependencies: [
-                .product(name: "SnapKit", package: "SnapKit"),
-                .product(name: "Sample", package: "Package")
+                .product(name: "SnapKit", package: "SnapKit")
             ],
             path: "Sources",
             resources: [

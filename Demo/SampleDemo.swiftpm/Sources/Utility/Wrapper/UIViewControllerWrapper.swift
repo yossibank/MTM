@@ -1,9 +1,9 @@
 import SwiftUI
 
-struct UIViewControllerWrapper<T: UIViewController>: UIViewControllerRepresentable {
-    let viewController: T
+struct UIViewControllerWrapper<ViewController: UIViewController>: UIViewControllerRepresentable {
+    let viewController: ViewController
 
-    func makeUIViewController(context: Context) -> T {
+    func makeUIViewController(context: Context) -> ViewController {
         viewController
     }
 
