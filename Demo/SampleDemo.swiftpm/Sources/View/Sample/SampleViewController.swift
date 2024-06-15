@@ -8,31 +8,29 @@ final class SampleViewController: UIViewController {
     )
 
     private var collectionViewLayout: UICollectionViewLayout {
-        UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
+        UICollectionViewCompositionalLayout { [weak self] sectionIndex, layoutEnvironment in
+            guard let self else {
+                return nil
+            }
+
             let section = SampleSection.allCases[sectionIndex]
 
             switch section {
             case .sample1:
-                let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
-
                 return NSCollectionLayoutSection.list(
-                    using: configuration,
+                    using: layoutListConfiguration(),
                     layoutEnvironment: layoutEnvironment
                 )
 
             case .sample2:
-                let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
-
                 return NSCollectionLayoutSection.list(
-                    using: configuration,
+                    using: layoutListConfiguration(),
                     layoutEnvironment: layoutEnvironment
                 )
 
             case .sample3:
-                let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
-
                 return NSCollectionLayoutSection.list(
-                    using: configuration,
+                    using: layoutListConfiguration(),
                     layoutEnvironment: layoutEnvironment
                 )
             }
@@ -65,7 +63,10 @@ private extension SampleViewController {
     }
 
     func configureDataSource() {
-        let cellRegistration = CellRegistration<UICollectionViewListCell, SampleViewData> { cell, indexPath, viewData in
+        let cellRegistration = CellRegistration<
+            UICollectionViewListCell,
+            SampleViewData
+        > { cell, indexPath, viewData in
             var configuration = cell.defaultContentConfiguration()
             configuration.text = "Title: \(viewData.title)"
             configuration.secondaryText = "IndexPath.Row: \(indexPath.row)"
@@ -82,14 +83,60 @@ private extension SampleViewController {
                 item: item
             )
         }
+
+        let headerRegistration = HeaderRegistration<UICollectionViewListCell>(
+            elementKind: UICollectionView.elementKindSectionHeader
+        ) { view, _, indexPath in
+            let section = SampleSection.allCases[indexPath.section]
+            var configuration = view.defaultContentConfiguration()
+            configuration.text = section.title
+            view.contentConfiguration = configuration
+        }
+
+        dataSource?.supplementaryViewProvider = { collectionView, _, indexPath in
+            collectionView.dequeueConfiguredReusableSupplementary(
+                using: headerRegistration,
+                for: indexPath
+            )
+        }
+    }
+
+    func layoutListConfiguration() -> UICollectionLayoutListConfiguration {
+        var configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+
+        configuration.trailingSwipeActionsConfigurationProvider = { indexPath in
+            let deleteAction = UIContextualAction(
+                style: .destructive,
+                title: "削除"
+            ) { [weak self] _, _, completion in
+                guard
+                    let self,
+                    let id = dataSource?.itemIdentifier(for: indexPath)
+                else {
+                    completion(false)
+                    return
+                }
+
+                let section = SampleSection.allCases[indexPath.section]
+                provider.delete(section: section, id: id)
+                applySnapshot()
+                completion(true)
+            }
+
+            return UISwipeActionsConfiguration(actions: [deleteAction])
+        }
+
+        configuration.headerMode = .supplementary
+
+        return configuration
     }
 
     func applySnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<SampleSection, SampleViewData.ID>()
         snapshot.appendSections(SampleSection.allCases)
-        snapshot.appendItems(SampleViewDataProvider.sample1.map(\.id), toSection: .sample1)
-        snapshot.appendItems(SampleViewDataProvider.sample2.map(\.id), toSection: .sample2)
-        snapshot.appendItems(SampleViewDataProvider.sample3.map(\.id), toSection: .sample3)
+        snapshot.appendItems(provider.sample1.map(\.id), toSection: .sample1)
+        snapshot.appendItems(provider.sample2.map(\.id), toSection: .sample2)
+        snapshot.appendItems(provider.sample3.map(\.id), toSection: .sample3)
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
 }
