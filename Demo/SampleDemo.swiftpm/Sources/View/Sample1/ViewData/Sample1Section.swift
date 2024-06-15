@@ -1,6 +1,6 @@
 import Foundation
 
-enum SampleSection: String, CaseIterable {
+enum Sample1Section: String, CaseIterable {
     case sample1
     case sample2
     case sample3

@@ -13,7 +13,7 @@ final class Sample1ViewController: UIViewController {
                 return nil
             }
 
-            let section = SampleSection.allCases[sectionIndex]
+            let section = Sample1Section.allCases[sectionIndex]
 
             switch section {
             case .sample1:
@@ -38,11 +38,11 @@ final class Sample1ViewController: UIViewController {
     }
 
     private var dataSource: UICollectionViewDiffableDataSource<
-        SampleSection,
-        SampleViewData.ID
+        Sample1Section,
+        Sample1ViewData.ID
     >?
 
-    private let provider = SampleViewDataProvider()
+    private let provider = Sample1ViewDataProvider()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +67,7 @@ private extension Sample1ViewController {
     func configureDataSource() {
         let cellRegistration = CellRegistration<
             UICollectionViewListCell,
-            SampleViewData
+            Sample1ViewData
         > { cell, indexPath, viewData in
             var configuration = cell.defaultContentConfiguration()
             configuration.text = "Title: \(viewData.title)"
@@ -76,7 +76,7 @@ private extension Sample1ViewController {
         }
 
         dataSource = .init(collectionView: collectionView) { [weak self] collectionView, indexPath, id in
-            let section = SampleSection.allCases[indexPath.section]
+            let section = Sample1Section.allCases[indexPath.section]
             let item = self?.provider.viewData(section: section, id: id)
 
             return collectionView.dequeueConfiguredReusableCell(
@@ -89,7 +89,7 @@ private extension Sample1ViewController {
         let headerRegistration = HeaderRegistration<UICollectionViewListCell>(
             elementKind: UICollectionView.elementKindSectionHeader
         ) { view, _, indexPath in
-            let section = SampleSection.allCases[indexPath.section]
+            let section = Sample1Section.allCases[indexPath.section]
             var configuration = view.defaultContentConfiguration()
             configuration.text = section.title
             view.contentConfiguration = configuration
@@ -119,7 +119,7 @@ private extension Sample1ViewController {
                     return
                 }
 
-                let section = SampleSection.allCases[indexPath.section]
+                let section = Sample1Section.allCases[indexPath.section]
                 provider.delete(section: section, id: id)
                 applySnapshot()
                 completion(true)
@@ -134,8 +134,8 @@ private extension Sample1ViewController {
     }
 
     func applySnapshot() {
-        var snapshot = NSDiffableDataSourceSnapshot<SampleSection, SampleViewData.ID>()
-        snapshot.appendSections(SampleSection.allCases)
+        var snapshot = NSDiffableDataSourceSnapshot<Sample1Section, Sample1ViewData.ID>()
+        snapshot.appendSections(Sample1Section.allCases)
         snapshot.appendItems(provider.sample1.map(\.id), toSection: .sample1)
         snapshot.appendItems(provider.sample2.map(\.id), toSection: .sample2)
         snapshot.appendItems(provider.sample3.map(\.id), toSection: .sample3)
