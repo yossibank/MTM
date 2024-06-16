@@ -2,7 +2,7 @@ import UIKit
 
 // MARK: - properties & init
 
-final class ___FILEBASENAME___: UIView {
+final class CustomView: UIView {
     private var body: UIView {
         VStackView(alignment: .center) {
             UILabel().configure {
@@ -10,6 +10,9 @@ final class ___FILEBASENAME___: UIView {
             }
 
             label
+
+            UISpacer()
+                .height(10)
         }
     }
 
@@ -30,21 +33,21 @@ final class ___FILEBASENAME___: UIView {
 
 // MARK: - private methods
 
-private extension ___FILEBASENAME___ {
+private extension CustomView {
     func setupView() {
         configure {
             $0.addSubview(body) {
-                $0.edges.equalToSuperview()
+                $0.horizontalEdges.centerY.equalToSuperview()
             }
 
-            $0.backgroundColor = .white
+            $0.backgroundColor = .red
         }
     }
 }
 
 // MARK: - internal methods
 
-extension ___FILEBASENAME___ {}
+extension CustomView {}
 
 // MARK: - preview
 
@@ -53,13 +56,13 @@ extension ___FILEBASENAME___ {}
 
     @available(iOS 17.0, *)
     #Preview(traits: .sizeThatFitsLayout) {
-        ___FILEBASENAME___()
-            .size(width: .deviceWidth)
+        CustomView()
+            .size(width: .deviceWidth, height: 200)
     }
 
-    struct ___FILEBASENAME___Preview: PreviewProvider {
+    struct CustomViewPreview: PreviewProvider {
         static var previews: some View {
-            WrapperView(view: ___FILEBASENAME___())
+            WrapperView(view: CustomView())
         }
     }
 #endif

@@ -79,8 +79,8 @@ extension SampleCell {
                 $0.configure(row: 1)
             }
             .frame(
-                width: (DeviceSize.width - 2) / 3,
-                height: (DeviceSize.width - 2) / 3
+                width: (.deviceWidth - 2) / 3,
+                height: (.deviceWidth - 2) / 3
             )
         }
     }

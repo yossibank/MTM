@@ -6,12 +6,16 @@ import UIKit
 final class Sample2ViewController: UIViewController {
     private var body: UIView {
         VStackView(alignment: .center, spacing: 16) {
-            Sample1View().addConstraint {
-                $0.height.equalTo(56)
+            Sample1View().configure {
+                $0.backgroundColor = .red
             }
 
-            Sample2View().addConstraint {
-                $0.height.equalTo(56)
+            Sample2View().configure {
+                $0.backgroundColor = .blue
+            }
+
+            CustomView().addConstraint {
+                $0.height.equalTo(200)
             }
         }
     }

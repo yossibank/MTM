@@ -4,13 +4,21 @@ import UIKit
 
 final class Sample2View: UIView {
     private var body: UIView {
-        VStackView(alignment: .center) {
+        VStackView(alignment: .center, spacing: 8) {
             UILabel().configure {
                 $0.text = "Hello World!"
                 $0.font = .systemFont(ofSize: .apply(base: 30))
             }
 
             label
+
+            UIImageView()
+                .configure {
+                    $0.image = .init(systemName: "swift")
+                }
+                .addConstraint {
+                    $0.size.equalTo(100 * DeviceSize.sizeRatio)
+                }
         }
     }
 
@@ -36,10 +44,10 @@ private extension Sample2View {
     func setupView() {
         configure {
             $0.addSubview(body) {
-                $0.center.equalToSuperview()
+                $0.edges.equalToSuperview()
             }
 
-            $0.backgroundColor = .white
+            $0.backgroundColor = .blue
         }
     }
 }
@@ -53,7 +61,12 @@ extension Sample2View {}
 #if DEBUG
     import SwiftUI
 
-    struct CustomViewPreview: PreviewProvider {
+    @available(iOS 17.0, *)
+    #Preview(traits: .sizeThatFitsLayout) {
+        Sample2View()
+    }
+
+    struct Sample2ViewPreview: PreviewProvider {
         static var previews: some View {
             WrapperView(view: Sample2View())
         }

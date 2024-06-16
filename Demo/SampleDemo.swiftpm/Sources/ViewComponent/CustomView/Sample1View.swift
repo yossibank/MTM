@@ -36,7 +36,7 @@ private extension Sample1View {
     func setupView() {
         configure {
             $0.addSubview(body) {
-                $0.center.equalToSuperview()
+                $0.edges.equalToSuperview()
             }
 
             $0.backgroundColor = .white
@@ -52,6 +52,11 @@ extension Sample1View {}
 
 #if DEBUG
     import SwiftUI
+
+    @available(iOS 17.0, *)
+    #Preview(traits: .sizeThatFitsLayout) {
+        Sample1View()
+    }
 
     struct Sample1ViewPreview: PreviewProvider {
         static var previews: some View {
