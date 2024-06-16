@@ -21,7 +21,7 @@ final class SampleCell: UICollectionViewCell {
     }
 
     private let subTitleLabel = UILabel().configure {
-        $0.font = .systemFont(ofSize: .apply(base: 12))
+        $0.font = .systemFont(ofSize: .apply(base: 14))
     }
 
     override init(frame: CGRect) {
@@ -78,7 +78,10 @@ extension SampleCell {
             WrapperView(view: SampleCell()) {
                 $0.configure(row: 1)
             }
-            .size((DeviceSize.width - 2) / 3)
+            .frame(
+                width: (DeviceSize.width - 2) / 3,
+                height: (DeviceSize.width - 2) / 3
+            )
         }
     }
 #endif
