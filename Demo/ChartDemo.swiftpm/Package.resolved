@@ -12,19 +12,10 @@
     {
       "identity" : "snapkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "location" : "https://github.com/SnapKit/SnapKit",
       "state" : {
         "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
         "version" : "5.7.1"
-      }
-    },
-    {
-      "identity" : "swiftformat",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/nicklockwood/SwiftFormat",
-      "state" : {
-        "revision" : "dd989a46d0c6f15c016484bab8afe5e7a67a4022",
-        "version" : "0.54.0"
       }
     }
   ],

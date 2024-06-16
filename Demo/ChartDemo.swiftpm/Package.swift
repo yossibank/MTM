@@ -8,25 +8,29 @@ import AppleProductTypes
 import PackageDescription
 
 let package = Package(
-    name: "SampleDemo",
+    name: "ChartDemo",
     platforms: [
-        .iOS("15.0")
+        .iOS("16.0")
     ],
     products: [
         .iOSApplication(
-            name: "SampleDemo",
-            targets: ["SampleDemo"],
-            bundleIdentifier: "yossibank-yahoo.co.jp.SampleDemo",
+            name: "ChartDemo",
+            targets: ["ChartDemo"],
+            bundleIdentifier: "yossibank-yahoo.co.jp.ChartDemo",
             teamIdentifier: "6WHPY5MQSB",
             displayVersion: "1.0",
             bundleVersion: "1",
-            appIcon: .placeholder(icon: .cloud),
-            accentColor: .presetColor(.mint),
+            appIcon: .placeholder(icon: .coins),
+            accentColor: .presetColor(.purple),
             supportedDeviceFamilies: [
+                .pad,
                 .phone
             ],
             supportedInterfaceOrientations: [
-                .portrait
+                .portrait,
+                .landscapeRight,
+                .landscapeLeft,
+                .portraitUpsideDown(.when(deviceFamilies: [.pad]))
             ]
         )
     ],
@@ -34,13 +38,18 @@ let package = Package(
         .package(
             url: "https://github.com/SnapKit/SnapKit.git",
             from: "5.7.1"
+        ),
+        .package(
+            url: "https://github.com/danielgindi/Charts.git",
+            from: "5.1.0"
         )
     ],
     targets: [
         .executableTarget(
-            name: "SampleDemo",
+            name: "ChartDemo",
             dependencies: [
-                .product(name: "SnapKit", package: "SnapKit")
+                .product(name: "SnapKit", package: "SnapKit"),
+                .product(name: "DGCharts", package: "Charts")
             ],
             path: "Sources",
             resources: [

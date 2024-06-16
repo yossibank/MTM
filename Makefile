@@ -4,6 +4,7 @@ PRODUCT_NAME := MTM
 setup:
 	$(MAKE) install-bundler
 	$(MAKE) install-mint-packages
+	$(MAKE) install-template
 	$(MAKE) generate-folder
 	$(MAKE) generate-mock
 	$(MAKE) open
@@ -28,6 +29,10 @@ install-bundler:
 .PHONY: install-mint-packages
 install-mint-packages:
 	mint bootstrap --overwrite y
+
+.PHONY: install-template
+install-template:
+	sh Script/template.sh
 
 .PHONY: generate-folder
 generate-folder:
