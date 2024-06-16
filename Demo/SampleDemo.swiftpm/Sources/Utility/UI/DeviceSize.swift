@@ -53,7 +53,7 @@ enum Device {
     case iPhoneXsMax
     case iPhoneXr
 
-    private var width: CGFloat {
+    var width: CGFloat {
         switch self {
         case .iPhoneSE1st:
             320

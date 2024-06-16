@@ -2,14 +2,19 @@ import UIKit
 
 // MARK: - properties & init
 
-final class SampleTextView: UIView {
+final class ___FILEBASENAME___: UIView {
     private var body: UIView {
         VStackView(alignment: .center) {
             UILabel().configure {
                 $0.text = "Hello World!"
-                $0.font = .systemFont(ofSize: .apply(base: 30))
             }
+
+            label
         }
+    }
+
+    private let label = UILabel().configure {
+        $0.text = "hello world!"
     }
 
     override init(frame: CGRect) {
@@ -25,11 +30,11 @@ final class SampleTextView: UIView {
 
 // MARK: - private methods
 
-private extension SampleTextView {
+private extension ___FILEBASENAME___ {
     func setupView() {
         configure {
             $0.addSubview(body) {
-                $0.center.equalToSuperview()
+                $0.edges.equalToSuperview()
             }
 
             $0.backgroundColor = .white
@@ -39,14 +44,16 @@ private extension SampleTextView {
 
 // MARK: - internal methods
 
-extension SampleTextView {}
+extension ___FILEBASENAME___ {}
+
+// MARK: - preview
 
 #if DEBUG
     import SwiftUI
 
-    struct SampleTextViewPreview: PreviewProvider {
+    struct ___FILEBASENAME___Preview: PreviewProvider {
         static var previews: some View {
-            WrapperView(view: SampleTextView())
+            WrapperView(view: ___FILEBASENAME___())
         }
     }
 #endif

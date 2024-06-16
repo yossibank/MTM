@@ -4,7 +4,17 @@ import UIKit
 // MARK: - properties & init
 
 final class Sample2ViewController: UIViewController {
-    private let sampleTextView = SampleTextView()
+    private var body: UIView {
+        VStackView(alignment: .center, spacing: 16) {
+            Sample1View().addConstraint {
+                $0.height.equalTo(56)
+            }
+
+            Sample2View().addConstraint {
+                $0.height.equalTo(56)
+            }
+        }
+    }
 }
 
 // MARK: - override methods
@@ -23,8 +33,15 @@ private extension Sample2ViewController {
     func setupView() {
         title = "sample2"
 
-        view.addSubview(sampleTextView) {
+        view.addSubview(body) {
             $0.center.equalToSuperview()
         }
     }
 }
+
+#if DEBUG
+    @available(iOS 17.0, *)
+    #Preview {
+        Sample2ViewController()
+    }
+#endif

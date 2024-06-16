@@ -24,17 +24,53 @@ final class Sample1ViewController: UIViewController {
                     layoutEnvironment: layoutEnvironment
                 )
 
-            case .sample2:
-                return NSCollectionLayoutSection.list(
-                    using: layoutListConfiguration(),
-                    layoutEnvironment: layoutEnvironment
-                )
-
             case .sample3:
                 return NSCollectionLayoutSection.list(
                     using: layoutListConfiguration(),
                     layoutEnvironment: layoutEnvironment
                 )
+
+            case .sample2:
+                let itemSize = (collectionView.bounds.width - 2) / 3
+                let item = NSCollectionLayoutItem(
+                    layoutSize: .init(
+                        widthDimension: .absolute(itemSize),
+                        heightDimension: .absolute(itemSize)
+                    )
+                )
+
+                let items = NSCollectionLayoutGroup.horizontal(
+                    layoutSize: .init(
+                        widthDimension: .fractionalWidth(1.0),
+                        heightDimension: .fractionalHeight(1.0)
+                    ),
+                    subitem: item,
+                    count: 3
+                )
+                items.interItemSpacing = .fixed(1)
+
+                let group = NSCollectionLayoutGroup.vertical(
+                    layoutSize: .init(
+                        widthDimension: .fractionalWidth(1.0),
+                        heightDimension: .absolute(itemSize)
+                    ),
+                    subitems: [items]
+                )
+
+                let header = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: .init(
+                        widthDimension: .fractionalWidth(1.0),
+                        heightDimension: .absolute(28)
+                    ),
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+                header.pinToVisibleBounds = true
+
+                let section = NSCollectionLayoutSection(group: group)
+                section.interGroupSpacing = 1
+                section.boundarySupplementaryItems = [header]
+                return section
             }
         }
     }
@@ -84,15 +120,32 @@ private extension Sample1ViewController {
             cell.contentConfiguration = configuration
         }
 
+        let sampleCellRegistration = CellRegistration<
+            SampleCell,
+            Sample1ViewData
+        > { cell, indexPath, _ in
+            cell.configure(row: indexPath.row)
+        }
+
         dataSource = .init(collectionView: collectionView) { [weak self] collectionView, indexPath, id in
             let section = Sample1Section.allCases[indexPath.section]
             let item = self?.provider.viewData(section: section, id: id)
 
-            return collectionView.dequeueConfiguredReusableCell(
-                using: cellRegistration,
-                for: indexPath,
-                item: item
-            )
+            switch section {
+            case .sample1, .sample3:
+                return collectionView.dequeueConfiguredReusableCell(
+                    using: cellRegistration,
+                    for: indexPath,
+                    item: item
+                )
+
+            case .sample2:
+                return collectionView.dequeueConfiguredReusableCell(
+                    using: sampleCellRegistration,
+                    for: indexPath,
+                    item: item
+                )
+            }
         }
 
         let headerRegistration = HeaderRegistration<UICollectionViewListCell>(
@@ -151,3 +204,10 @@ private extension Sample1ViewController {
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
 }
+
+#if DEBUG
+    @available(iOS 17.0, *)
+    #Preview {
+        Sample1ViewController()
+    }
+#endif

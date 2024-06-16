@@ -22,3 +22,10 @@ private extension Sample3ViewController {
         title = "sample3"
     }
 }
+
+#if DEBUG
+    @available(iOS 17.0, *)
+    #Preview {
+        Sample3ViewController()
+    }
+#endif

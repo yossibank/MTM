@@ -10,7 +10,7 @@ final class Sample1ViewDataProvider {
         .init(title: String(describing: $0))
     }
 
-    private(set) var sample2: [Sample1ViewData] = (1 ... 5).map {
+    private(set) var sample2: [Sample1ViewData] = (1 ... 7).map {
         .init(title: String(describing: $0 * 2))
     }
 
