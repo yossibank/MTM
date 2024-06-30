@@ -39,19 +39,11 @@ extension ViewLayoutable where Self: UIView {
     }
 
     @discardableResult
-    func size(
-        width: CGFloat? = nil,
-        height: CGFloat? = nil
-    ) -> Self {
+    func size(_ size: CGFloat) -> Self {
         snp.makeConstraints {
-            if let width {
-                $0.width.equalTo(width)
-            }
-
-            if let height {
-                $0.height.equalTo(height)
-            }
+            $0.size.equalTo(size)
         }
+
         return self
     }
 }

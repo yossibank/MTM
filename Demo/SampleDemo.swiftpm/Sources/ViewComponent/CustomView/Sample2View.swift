@@ -12,13 +12,10 @@ final class Sample2View: UIView {
 
             label
 
-            UIImageView()
-                .configure {
-                    $0.image = .init(systemName: "swift")
-                }
-                .addConstraint {
-                    $0.size.equalTo(100 * DeviceSize.sizeRatio)
-                }
+            UIImageView().configure {
+                $0.image = .init(systemName: "swift")
+                $0.size(.apply(base: 100))
+            }
         }
     }
 

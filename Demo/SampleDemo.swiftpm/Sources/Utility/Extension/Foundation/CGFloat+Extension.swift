@@ -2,14 +2,14 @@ import Foundation
 
 extension CGFloat {
     static var deviceWidth: CGFloat {
-        DeviceSize.width
+        Device.width
     }
 
     static var deviceHeight: CGFloat {
-        DeviceSize.height
+        Device.height
     }
 
     static func apply(base size: CGFloat) -> CGFloat {
-        size * DeviceSize.sizeRatio
+        size * Device.sizeRatio
     }
 }

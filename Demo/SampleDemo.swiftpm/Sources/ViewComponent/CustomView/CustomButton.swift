@@ -2,7 +2,7 @@ import UIKit
 
 // MARK: - properties & init
 
-final class CustomView: UIView {
+final class CustomButton: UIView {
     private var body: UIView {
         VStackView(alignment: .center) {
             UILabel().configure {
@@ -10,9 +10,6 @@ final class CustomView: UIView {
             }
 
             label
-
-            UIView()
-                .height(10)
         }
     }
 
@@ -33,21 +30,21 @@ final class CustomView: UIView {
 
 // MARK: - private methods
 
-private extension CustomView {
+private extension CustomButton {
     func setupView() {
         configure {
             $0.addSubview(body) {
-                $0.horizontalEdges.centerY.equalToSuperview()
+                $0.edges.equalToSuperview()
             }
 
-            $0.backgroundColor = .red
+            $0.backgroundColor = .white
         }
     }
 }
 
 // MARK: - internal methods
 
-extension CustomView {}
+extension CustomButton {}
 
 // MARK: - preview
 
@@ -56,12 +53,13 @@ extension CustomView {}
 
     @available(iOS 17.0, *)
     #Preview(traits: .sizeThatFitsLayout) {
-        CustomView()
+        CustomButton()
+            .width(.deviceWidth)
     }
 
-    struct CustomViewPreview: PreviewProvider {
+    struct CustomButtonPreview: PreviewProvider {
         static var previews: some View {
-            WrapperView(view: CustomView())
+            WrapperView(view: CustomButton())
         }
     }
 #endif
