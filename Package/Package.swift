@@ -107,7 +107,7 @@ let package = Package.package(
     dependencies: [
         .package(
             url: "https://github.com/nicklockwood/SwiftFormat",
-            from: "0.54.1"
+            from: "0.54.2"
         ),
         .package(
             url: "https://github.com/SnapKit/SnapKit",
